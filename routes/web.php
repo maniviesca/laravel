@@ -12,10 +12,14 @@
 */
 
 Route::get('/', function () {
-  echo "HOLAA";
-  //  return view('welcome');
+    return view('edad');
 });
+Route::get('/edad/{age?}' , 'BasicController@edad')->name('edad');
 
-Route::get('Hello', function(){
+Route::get('/nombre/{name}' , 'BasicController@nombre');;
+
+
+
+/*Route::get('Hello', function(){
 	echo 'Hola otra vez';
-});
+});*/
