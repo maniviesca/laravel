@@ -18,7 +18,9 @@ Route::get('/edad/{age?}' , 'BasicController@edad')->name('edad');
 
 Route::get('/nombre/{name}' , 'BasicController@nombre');;
 
+Route::get('texto', 'RestController@invert');
 
+Route::get('song', 'RestController@text');
 
 /*Route::get('Hello', function(){
 	echo 'Hola otra vez';
