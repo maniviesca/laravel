@@ -81,16 +81,19 @@ class RestController extends Controller
     {
         //
     }
-    public function invert()
+    public function invert(request $frase)
     {
-        $texto =  "The PHP Framework For Web Artisans";  
-      $invertido =  strrev($texto);
-      echo $invertido;
-    }
-    public function text()
-    {
-        $texto = "Bye bye, bye bye meine Liebe des Lebens
-        Und ja wir beide werden uns nie wieder sehen";
+        $texto = strrev($frase->input('frase')); 
+        
         echo $texto;
+    }
+    public function text(request $texto)
+    {
+        
+        $hola = $texto->input('name');
+       
+       // $texto = "Bye bye, bye bye meine Liebe des Lebens
+        //Und ja wir beide werden uns nie wieder sehen";
+        echo $hola;
     }
 }

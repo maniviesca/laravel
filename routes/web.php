@@ -14,14 +14,16 @@
 Route::get('/', function () {
     return view('edad');
 });
-Route::get('/edad/{age?}' , 'BasicController@edad')->name('edad');
 
-Route::get('/nombre/{name}' , 'BasicController@nombre');;
+Route::match(['get', 'post'], '/edad/{age?}' ,'BasicController@edad');
+//Route::get('/edad/{age?}' , 'BasicController@edad')->name('edad');
 
-Route::get('texto', 'RestController@invert');
+Route::match(['get', 'post'], '/nombre/{name}' ,'BasicController@nombre');
+//Route::get('/nombre/{name}' , 'BasicController@nombre');;
 
-Route::get('song', 'RestController@text');
+//Route::match(['get', 'post'], '/texto' ,'RestController@invert');
+Route::post('texto', 'RestController@invert');
+//Route::match(['get', 'post'], '/song' ,'RestController@text');
+Route::post('song', 'RestController@text');
 
-/*Route::get('Hello', function(){
-	echo 'Hola otra vez';
-});*/
+Route::get('/age/{age}' ,'BasicController@age')->middleware(edad::class);

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class BasicController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('edad');
+    }
     public function edad($age = null)
     {
    		
@@ -23,5 +27,9 @@ class BasicController extends Controller
     	else{
     		echo "My name is " . $name;
     	}
+    }
+    public function age()
+    {
+        echo "Bienvenido";
     }
 }
