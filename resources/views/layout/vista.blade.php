@@ -3,13 +3,16 @@
 <head>
   <title></title>
  
- @include('layout.head')
+ 	@include('layout.head')
   
 </head>
 <header>
 	@include('layout.header')
+	
 </header>
 <body>
+
+@include('layout.left')	 @include('layout.right')
 
 </body>
 
