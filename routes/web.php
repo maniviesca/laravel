@@ -27,3 +27,6 @@ Route::post('texto', 'RestController@invert');
 Route::post('song', 'RestController@text');
 
 Route::get('/age/{age}' ,'BasicController@age')->middleware(edad::class);
+
+Route::get('/error' ,function()
+	{ return "error";});

@@ -15,14 +15,13 @@ class VerifyAge
      */
     public function handle($request, Closure $next)
     {
+          $age = $request->route('age');
+        if($age > 0)
+        {
         return $next($request);
     }
-    public function edad($request, Closure $next)
-    {
-             if ($request->('age') <= 0) {
-            echo "Error, la edad tiene que ser mayor a 0";
-        }
-
-        return $next($request);
+        else return redirect()->to('error');
+          
     }
+  
 }
