@@ -30,3 +30,8 @@ Route::get('/age/{age}' ,'BasicController@age')->middleware(edad::class);
 
 Route::get('/error' ,function()
 	{ return "error";});
+Route::get('/vista' ,function()
+{
+	return view('layout.vista');
+	
+});

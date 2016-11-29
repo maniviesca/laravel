@@ -32,4 +32,8 @@ class BasicController extends Controller
     {
         echo "Bienvenido";
     }
+    public function vista()
+    {
+        $this->view('header');
+    }
 }
