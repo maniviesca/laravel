@@ -34,7 +34,6 @@ class BasicController extends Controller
     }
     public function vista()
     {
-        //$Data = array('fecha' => '30 de noviembre de 2016' );
         return view('layout.vista',['fecha' => '30 de noviembre 2016']);
     }
 }
