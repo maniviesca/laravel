@@ -35,3 +35,6 @@ Route::get('/vista' ,'BasicController@vista');
 	return view('layout.vista',['fecha' => '30 noviembre 2016'] );
 	
 });*/
+Auth::routes('login','LoginController');
+
+Route::get('/home', 'HomeController@index');
