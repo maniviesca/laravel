@@ -8,7 +8,7 @@ class BasicController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('edad');
+       // $this->middleware('edad');
     }
     public function edad($age = null)
     {
@@ -34,6 +34,7 @@ class BasicController extends Controller
     }
     public function vista()
     {
-        $this->view('header');
+        //$Data = array('fecha' => '30 de noviembre de 2016' );
+        return view('layout.vista',['fecha' => '30 de noviembre 2016']);
     }
 }

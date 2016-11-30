@@ -8,12 +8,13 @@
 </head>
 <header>
 	@include('layout.header')
-	
+	@include('layout.left')	 @include('layout.right')
 </header>
 <body>
 
-@include('layout.left')	 @include('layout.right')
-
+@include('layout.importancia')
+<div align="center">
+<?php echo $fecha; ?></div>
 </body>
 
 </html>

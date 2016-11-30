@@ -26,12 +26,12 @@ Route::post('texto', 'RestController@invert');
 //Route::match(['get', 'post'], '/song' ,'RestController@text');
 Route::post('song', 'RestController@text');
 
-Route::get('/age/{age}' ,'BasicController@age')->middleware(edad::class);
+//Route::get('/age/{age}' ,'BasicController@age')->middleware(edad::class);
 
-Route::get('/error' ,function()
-	{ return "error";});
-Route::get('/vista' ,function()
-{
-	return view('layout.vista');
+/*Route::get('/error' ,function()
+	{ return "error";});*/
+Route::get('/vista' ,'BasicController@vista');
+/*{
+	return view('layout.vista',['fecha' => '30 noviembre 2016'] );
 	
-});
+});*/
