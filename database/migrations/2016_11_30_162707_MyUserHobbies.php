@@ -30,6 +30,6 @@ class MyUserHobbies extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('hobbies');
     }
 }
