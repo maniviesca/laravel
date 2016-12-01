@@ -1,9 +1,9 @@
 <?php
-use App\Usuario;
+use App\Hobbies;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class TablaUsuariosSeeder extends Seeder
+class HobbieSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,25 +12,18 @@ class TablaUsuariosSeeder extends Seeder
      */
     public function run()
     {
-    	$users = new Usuario;
+       $users = new Hobbies;
  		$faker = Faker::create();
  		foreach (range(1,5) as $index)
  		{
 	 		$data = array([
 	 		
-	 		'nombre_usuario' => $faker->word,
+	 		'id_user' => rand(203,204),
+	 		'hobby_one' => $faker->word,
+	 		'hobby_two' => $faker->word,
 	 			]);
  		}      
  		$users::insert($data);
-    	
-    	/*for($i=0;$i<=5;$i++)
-    	{
-    	 DB::table('usuarios')->insert([
-            'id_usuario' =>  rand(1,500),
-            'nombre_usuario' => str_random(10),
-            ]);
-    	}*/
-
     }
 }
 

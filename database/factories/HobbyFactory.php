@@ -14,7 +14,8 @@
  $factory->define(App\User::class, function (Faker\Generator $faker) {
         return
         [
-        	//'id_usuario' => $faker->unique()->id;
-        	'nombre_usuario' => $faker->name;
+        	'id_user' => $faker->unique()->id;
+        	'hobby_one' => $faker->word,
+        	'hobby_two' => $faker->word
         ]
         });

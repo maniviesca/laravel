@@ -14,10 +14,11 @@ class MyUserHobbies extends Migration
     public function up()
     {
          Schema::create('hobbies', function (Blueprint $table) {
-            $table->increments('id_user');
+            $table->integer('id_user')->unsigned();
             $table->string('hobby_one');
             $table->string('hobby_two')->nullable();
 
+            
             $table->foreign('id_user')->references('id_usuario')->on('usuarios');
             Schema::enableForeignKeyConstraints();
         });
