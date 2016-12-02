@@ -38,3 +38,10 @@ Route::get('/vista' ,'BasicController@vista');
 Auth::routes('login','LoginController');
 
 Route::get('/home', 'HomeController@index');
+Route::get('/facebook', 'AuthController@redirectToProvider');
+Route::get('/facebook/callback', 'AuthController@handleProviderCallback');
+/*Route::get('/facebook', function()
+	{return view('facebook');});
+/*Route::get('/facebook/login', function(SammyK\LaravelFacebookSdk\LaravelFacebookSdk $fb) {
+    // . . .
+});*/
