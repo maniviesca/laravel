@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-use Socialite;
+use Auth;
+//use Socialite;
 
 class AuthController extends Controller
 {
@@ -23,8 +23,33 @@ class AuthController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
+       try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+ 
+        $authUser = $this->findOrCreateUser($user);
+ 
+        Auth::login($authUser, true);
+ 
+        return redirect()->route('home');
 
         // $user->token;
+    }
+    private function findOrCreateUser($facebookUser)
+    {
+         $authUser = User::where('facebook_id', $facebookUser->id)->first();
+ 
+        if ($authUser){
+            return $authUser;
+        }
+ 
+        return User::create([
+            'name' => $facebookUser->name,
+            'email' => $facebookUser->email,
+            'facebook_id' => $facebookUser->id,
+            'avatar' => $facebookUser->avatar
+        ]);
     }
 }

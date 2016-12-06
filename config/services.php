@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' =>[
+        'client_id' =>env('FACEBOOK_CLIENT_ID'),
+        'secret' => '686b98c0ec108e5e97427f9ff7b583a1',
+        'redirect' => env('CALLBACK_URL'),
+            ],
+
 ];
