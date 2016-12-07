@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('edad');
+    return view('home');
 });
 
 Route::match(['get', 'post'], '/edad/{age?}' ,'BasicController@edad');

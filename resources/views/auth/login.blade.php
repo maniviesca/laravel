@@ -37,7 +37,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>
+                        <a href="https://api.instagram.com/oauth/authorize/?client_id=3c4c6a42e2044ed7b880cd0ff0c02140&redirect_uri=http://localhost:8000/&response_type=code">INSTAGRAM</a>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
